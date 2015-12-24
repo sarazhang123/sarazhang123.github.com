@@ -121,7 +121,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a>
+                        <a href="/tags/Git-Page/" style="font-size: 10px;">Git Page</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a>
                     </div>
                 </section>
                 
@@ -258,10 +258,14 @@
 
         <div class="article-info info-on-archive">
           
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/安装配置篇/">安装配置篇</a>
+    </div>
+
 
           
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git-Page/">Git Page</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
     </div>
 
         </div>
@@ -313,7 +317,7 @@
             isArchive: true,
             isTag: false,
             isCategory: false,
-            open_in_new: true
+            open_in_new: false
         }
     </script>
 
@@ -322,7 +326,7 @@
 <script src="/js/main.js" type="text/javascript"></script>
 
     <script>
-        var backgroundnum = 5;
+        var backgroundnum = 10;
         var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
 
         $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
