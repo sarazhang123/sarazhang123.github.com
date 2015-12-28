@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="接触前端不知不觉已经有一年半了，虽说是前端，但是真正写JS却少得可怜，对JS的理解真得挺少的，说起来有些惭愧。起初培训的时候学得是Java，大家都知道Java可以实现多线程，当然，个人感觉多线程编程还是有难度的。接触JS时，经常被告知JS是单线程，异步的语言，后来这些口号我也会喊，但是对其原理却一知半解，看到几位大牛的博文后，有种豁然开朗的感觉。故记录一下在下的理解！">
 <meta property="og:image" content="http://7xpg8c.com1.z0.glb.clouddn.com/bg2014100802.png">
-<meta property="og:updated_time" content="2015-12-28T02:44:28.275Z">
+<meta property="og:updated_time" content="2015-12-28T08:59:41.023Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript事件循环模型">
 <meta name="twitter:description" content="接触前端不知不觉已经有一年半了，虽说是前端，但是真正写JS却少得可怜，对JS的理解真得挺少的，说起来有些惭愧。起初培训的时候学得是Java，大家都知道Java可以实现多线程，当然，个人感觉多线程编程还是有难度的。接触JS时，经常被告知JS是单线程，异步的语言，后来这些口号我也会喊，但是对其原理却一知半解，看到几位大牛的博文后，有种豁然开朗的感觉。故记录一下在下的理解！">
@@ -264,22 +264,6 @@
   </div>
   
     
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2015/12/28/js-event-loop/">JavaScript事件循环模型</a></p>
-        <p><span>文章作者:</span><a href="/" title="访问 Felicity 的个人博客">Felicity</a></p>
-        <p><span>发布时间:</span>2015年12月28日 - 10时38分</p>
-        <p><span>最后更新:</span>2015年12月28日 - 10时44分</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/12/28/js-event-loop/" title="JavaScript事件循环模型">http://yoursite.com/2015/12/28/js-event-loop/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2015/12/28/js-event-loop/　　作者: Felicity" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script src="/js/clipboard.min.js"></script>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
 
 
     <nav id="article-nav">
@@ -501,12 +485,30 @@
 <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="/js/main.js" type="text/javascript"></script>
 
-    <script>
-        var backgroundnum = 10;
-        var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-
-        $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-    </script>
+    <style>
+        body {
+          background: lightgray;
+        }
+        #container .left-col {
+          background: white;
+        }
+        .article-inner {
+          background: white;
+          margin-bottom: 1em;
+        }
+        .post-nav-button {
+          background: #ececec;
+        }
+        #header .header-nav .social #GitHub {
+          background-color: #bfd3ec;
+        }
+        #post-nav-button a {
+          background: rgba(215, 216, 215, .2);
+        }
+        .post-list {
+          background: white;
+        }
+    </style>
 
 
 
