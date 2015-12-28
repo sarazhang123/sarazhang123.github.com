@@ -3,23 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello Hexo | Hexo</title>
+  <title>JavaScript事件循环模型 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="接触前端不知不觉已经有一年半了，虽说是前端，但是真正写JS却少得可怜，对JS的理解真得挺少的，说起来有些惭愧。起初培训的时候学得是Java，大家都知道Java可以实现多线程，当然，个人感觉多线程编程还是有难度的。接触JS时，经常被告知JS是单线程，异步的语言，后来这些口号我也会喊，但是对其原理却一知半解，看到几位大牛的博文后，有种豁然开朗的感觉。故记录一下在下的理解！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello Hexo">
-<meta property="og:url" content="http://yoursite.com/2015/12/24/hello-world/index.html">
+<meta property="og:title" content="JavaScript事件循环模型">
+<meta property="og:url" content="http://yoursite.com/2015/12/28/js-event-loop/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta property="og:updated_time" content="2015-12-24T04:37:00.089Z">
+<meta property="og:description" content="接触前端不知不觉已经有一年半了，虽说是前端，但是真正写JS却少得可怜，对JS的理解真得挺少的，说起来有些惭愧。起初培训的时候学得是Java，大家都知道Java可以实现多线程，当然，个人感觉多线程编程还是有难度的。接触JS时，经常被告知JS是单线程，异步的语言，后来这些口号我也会喊，但是对其原理却一知半解，看到几位大牛的博文后，有种豁然开朗的感觉。故记录一下在下的理解！">
+<meta property="og:image" content="http://7xpg8c.com1.z0.glb.clouddn.com/bg2014100802.png">
+<meta property="og:updated_time" content="2015-12-28T02:44:20.419Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello Hexo">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="JavaScript事件循环模型">
+<meta name="twitter:description" content="接触前端不知不觉已经有一年半了，虽说是前端，但是真正写JS却少得可怜，对JS的理解真得挺少的，说起来有些惭愧。起初培训的时候学得是Java，大家都知道Java可以实现多线程，当然，个人感觉多线程编程还是有难度的。接触JS时，经常被告知JS是单线程，异步的语言，后来这些口号我也会喊，但是对其原理却一知半解，看到几位大牛的博文后，有种豁然开朗的感觉。故记录一下在下的理解！">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="http://7xpg8c.com1.z0.glb.clouddn.com/8096659.png">
   
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
@@ -122,7 +123,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Git-Page/" style="font-size: 10px;">Git Page</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a>
+                        <a href="/tags/Event-Loop/" style="font-size: 10px;">Event Loop</a> <a href="/tags/Git-Page/" style="font-size: 10px;">Git Page</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a>
                     </div>
                 </section>
                 
@@ -198,11 +199,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js-event-loop" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/24/hello-world/" class="article-date">
-      <time datetime="2015-12-24T04:37:00.089Z" itemprop="datePublished">2015-12-24</time>
+      <a href="/2015/12/28/js-event-loop/" class="article-date">
+      <time datetime="2015-12-28T02:38:24.000Z" itemprop="datePublished">2015-12-28</time>
 </a>
     </div>
   
@@ -215,7 +216,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello Hexo
+      JavaScript事件循环模型
     </h1>
   
 
@@ -223,10 +224,14 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Web前端/">Web前端</a>
+    </div>
+
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Event-Loop/">Event Loop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -236,15 +241,22 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>接触前端不知不觉已经有一年半了，虽说是前端，但是真正写JS却少得可怜，对JS的理解真得挺少的，说起来有些惭愧。起初培训的时候学得是Java，大家都知道Java可以实现多线程，当然，个人感觉多线程编程还是有难度的。接触JS时，经常被告知JS是单线程，异步的语言，后来这些口号我也会喊，但是对其原理却一知半解，看到几位大牛的博文后，有种豁然开朗的感觉。故记录一下在下的理解！</p>
+<a id="more"></a>
+<h3 id="为什么JavaScript被设计成单线程和异步运行">为什么JavaScript被设计成单线程和异步运行</h3><p>1995年5月，Brendan Eich用了10天的时间设计了JavaScript语言。<br>那个时候，操作系统还是DOS的天下，Win95才发布。要知道Win95/Win98都是基于DOS的GUI层面的封装，单核CPU，多进程能力弱，可能Brendan Eich还不晓得存在多线程的概念。那时浏览器是单进程的，可能具备多线程的能力，但是硬件不支持，所以，它也只好是单线程的。虽然JavaScript是单线程的，但却有异步执行的能力，这不也弥补了单线程的不足，同时也简化了我们今天的开发，难道不是吗？</p>
+<p>所以说，一门语言的设计肯定和当时的时代背景，硬件设备，以及作者对这个世界的认知有关。</p>
+<h3 id="任务队列">任务队列</h3><p>任务队列是什么？<br>顾名思义，它是用来存放异步执行的回调的队列。会触发异步执行的操作包括<code>DOM事件</code>，<code>Ajax请求</code>，<code>定时器</code>。我们在一个网页中，点击事件，Ajax请求去服务器端获取数据来渲染页面，其实会产生很多异步任务的，那我们为什么看到的页面依旧是很流畅的？其实JavaScript执行引擎在主线程方法执行完，空闲的时候会不断地去检查任务队列，看是否有未执行的任务。如果有，则从队列中挨个取出，放到主线程的执行栈中执行。这一过程不断循环即为事件循环模型。</p>
+<h3 id="从setTimeout来讲事件循环模型">从setTimeout来讲事件循环模型</h3><p>相信用过JS的基本都用过setTimeout，它可以让某些操作延时执行。基本语法：<code>setTimeout(callback, millisecond)</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>;</span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> end = <span class="keyword">new</span> <span class="built_in">Date</span>;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'Time elapsed:'</span>, end - start, <span class="string">'ms'</span>);</span><br><span class="line">&#125;, <span class="number">500</span>);</span><br><span class="line"><span class="keyword">while</span> (<span class="keyword">new</span> <span class="built_in">Date</span> - start &lt; <span class="number">1000</span>) &#123;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码输出的结果是多少？<br>是不是觉得输出部分应该是延时500ms后再执行？是500ms吗？<br>答案是不确定，但是有一点是肯定的，那就是<code>至少</code>延时1000ms。</p>
+<p>因为主线程处有个1s的while()循环阻塞在那里，也就是必须等主线程的代码执行完毕，JavaScript引擎才会有空去任务队列查看有无要执行的任务。</p>
+<p>之前令我困惑的是，这些异步任务怎么会跑到任务队列中的？到底是谁操纵着这一切呢？</p>
+<p>在单线程的Javascript引擎中，setTimeout()是如何运行的呢，这里就要提到浏览器内核中的事件循环模型了。简单的讲，在Javascript执行引擎之外，有一个任务队列，当在代码中调用setTimeout()方法时，注册的延时方法会交由浏览器内核其他模块（以webkit为例，是webcore模块）处理，当延时方法到达触发条件，即到达设置的延时时间时，这一延时方法被添加至任务队列里。这一过程由浏览器内核其他模块处理，与执行引擎主线程独立，执行引擎在主线程方法执行完毕，到达空闲状态时，会从任务队列中顺序获取任务来执行，这一过程是一个不断循环的过程，称为事件循环模型。<br><img src="http://7xpg8c.com1.z0.glb.clouddn.com/bg2014100802.png" alt="Event Loop"></p>
+<p>  JavaScript执行引擎的主线程运行的时候，产生堆（heap）和栈（stack）。程序中代码依次进入栈中等待执行，当调用setTimeout()方法时，即图中右侧WebAPIs方法时，浏览器内核相应模块开始延时方法的处理，当延时方法到达触发条件时，方法被添加到用于回调的任务队列，只要执行引擎栈中的代码执行完毕，主线程就会去读取任务队列，依次执行那些满足触发条件的回调函数。</p>
+<p>  原来执行到WebAPI时，浏览器内核相应模块就开始忙碌起来，不同种类的API由相应模块处理，各司其职，有条不紊，最终都会把相应的异步回调送到任务队列中，等待主线程执行。</p>
+<h3 id="写在最后">写在最后</h3><p>有兴趣的其实可以去看看浏览器内核的实现，这样才能更好的理解JS的机制和原理，只是好久没碰过C++，看起来会很吃力吧！</p>
+<p>V8据说是最快的JS解释引擎，然后对此充满好奇的我还把V8源码下载下来了，准备好好啃啃，长长见识，看了一点，才发现C++的知识早已还给老师，基本语法概念都差不多忘了，打击太大，然后就放弃了，至今还静静地躺在我的硬盘上！</p>
+<p>求大神指教如何读源码！！</p>
+<p>参考文献：<br><a href="https://www.zhihu.com/question/35905242" target="_blank" rel="external">金戈铁马的知乎回答</a><br><a href="http://www.alloyteam.com/2015/10/turning-to-javascript-series-from-settimeout-said-the-event-loop-model/" target="_blank" rel="external">从setTimeout说事件循环模型</a><br><a href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html" target="_blank" rel="external">JavaScript 运行机制详解：再谈Event Loop</a></p>
 
       
     </div>
@@ -252,14 +264,30 @@
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2015/12/28/js-event-loop/">JavaScript事件循环模型</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Felicity 的个人博客">Felicity</a></p>
+        <p><span>发布时间:</span>2015年12月28日 - 10时38分</p>
+        <p><span>最后更新:</span>2015年12月28日 - 10时44分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2015/12/28/js-event-loop/" title="JavaScript事件循环模型">http://yoursite.com/2015/12/28/js-event-loop/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2015/12/28/js-event-loop/　　作者: Felicity" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
 
 
     <nav id="article-nav">
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2015/12/24/gitpage-hexo/">
-                    使用Hexo搭建GitHub Pages
+                <a href="/2015/12/25/hello-world/">
+                    Hello Hexo
                 </a>
             </div>
         
@@ -270,7 +298,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么JavaScript被设计成单线程和异步运行"><span class="toc-number">1.</span> <span class="toc-text">为什么JavaScript被设计成单线程和异步运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#任务队列"><span class="toc-number">2.</span> <span class="toc-text">任务队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从setTimeout来讲事件循环模型"><span class="toc-number">3.</span> <span class="toc-text">从setTimeout来讲事件循环模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写在最后"><span class="toc-number">4.</span> <span class="toc-text">写在最后</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -310,6 +338,22 @@
     }
 </script>
 
+
+    <style>
+        .toc {
+            white-space: nowrap;
+            overflow-x: hidden;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $(".toc li a").mouseover(function() {
+                var title = $(this).attr('href');
+                $(this).attr("title", title);
+            });
+        })
+    </script>
 
 
 
@@ -356,13 +400,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2015/12/24/gitpage-hexo/" title="下一篇: 使用Hexo搭建GitHub Pages">
+            <a href="/2015/12/25/hello-world/" title="下一篇: Hello Hexo">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2015/12/24/hello-world/">Hello Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/24/gitpage-hexo/">使用Hexo搭建GitHub Pages</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2015/12/28/js-event-loop/">JavaScript事件循环模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/hello-world/">Hello Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/24/gitpage-hexo/">使用Hexo搭建GitHub Pages</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
