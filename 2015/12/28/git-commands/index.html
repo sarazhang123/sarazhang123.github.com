@@ -3,19 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>JavaScript事件循环模型 | Hexo</title>
+  <title>Git常用命令 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="接触前端不知不觉已经有一年半了，虽说是前端，但是真正写JS却少得可怜，对JS的理解真得挺少的，说起来有些惭愧。起初培训的时候学得是Java，大家都知道Java可以实现多线程，当然，个人感觉多线程编程还是有难度的。接触JS时，经常被告知JS是单线程，异步的语言，后来这些口号我也会喊，但是对其原理却一知半解，看到几位大牛的博文后，有种豁然开朗的感觉。故记录一下在下的理解！">
+  <meta name="description" content="本文记录工作中常用的Git命令，不定期更新中…">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript事件循环模型">
-<meta property="og:url" content="http://yoursite.com/2015/12/28/js-event-loop/index.html">
+<meta property="og:title" content="Git常用命令">
+<meta property="og:url" content="http://yoursite.com/2015/12/28/git-commands/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="接触前端不知不觉已经有一年半了，虽说是前端，但是真正写JS却少得可怜，对JS的理解真得挺少的，说起来有些惭愧。起初培训的时候学得是Java，大家都知道Java可以实现多线程，当然，个人感觉多线程编程还是有难度的。接触JS时，经常被告知JS是单线程，异步的语言，后来这些口号我也会喊，但是对其原理却一知半解，看到几位大牛的博文后，有种豁然开朗的感觉。故记录一下在下的理解！">
-<meta property="og:image" content="http://7xpg8c.com1.z0.glb.clouddn.com/bg2014100802.png">
-<meta property="og:updated_time" content="2015-12-28T02:44:28.275Z">
+<meta property="og:description" content="本文记录工作中常用的Git命令，不定期更新中…">
+<meta property="og:updated_time" content="2015-12-28T08:47:45.103Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript事件循环模型">
-<meta name="twitter:description" content="接触前端不知不觉已经有一年半了，虽说是前端，但是真正写JS却少得可怜，对JS的理解真得挺少的，说起来有些惭愧。起初培训的时候学得是Java，大家都知道Java可以实现多线程，当然，个人感觉多线程编程还是有难度的。接触JS时，经常被告知JS是单线程，异步的语言，后来这些口号我也会喊，但是对其原理却一知半解，看到几位大牛的博文后，有种豁然开朗的感觉。故记录一下在下的理解！">
+<meta name="twitter:title" content="Git常用命令">
+<meta name="twitter:description" content="本文记录工作中常用的Git命令，不定期更新中…">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -199,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-js-event-loop" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-git-commands" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/28/js-event-loop/" class="article-date">
-      <time datetime="2015-12-28T02:38:24.000Z" itemprop="datePublished">2015-12-28</time>
+      <a href="/2015/12/28/git-commands/" class="article-date">
+      <time datetime="2015-12-28T04:39:55.000Z" itemprop="datePublished">2015-12-28</time>
 </a>
     </div>
   
@@ -216,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript事件循环模型
+      Git常用命令
     </h1>
   
 
@@ -225,13 +224,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Web前端/">Web前端</a>
+    <a class="article-category-link" href="/categories/常用命令篇/">常用命令篇</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Event-Loop/">Event Loop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -241,22 +240,97 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>接触前端不知不觉已经有一年半了，虽说是前端，但是真正写JS却少得可怜，对JS的理解真得挺少的，说起来有些惭愧。起初培训的时候学得是Java，大家都知道Java可以实现多线程，当然，个人感觉多线程编程还是有难度的。接触JS时，经常被告知JS是单线程，异步的语言，后来这些口号我也会喊，但是对其原理却一知半解，看到几位大牛的博文后，有种豁然开朗的感觉。故记录一下在下的理解！</p>
+        <p>本文记录工作中常用的Git命令，不定期更新中…</p>
 <a id="more"></a>
-<h3 id="为什么JavaScript被设计成单线程和异步运行">为什么JavaScript被设计成单线程和异步运行</h3><p>1995年5月，Brendan Eich用了10天的时间设计了JavaScript语言。<br>那个时候，操作系统还是DOS的天下，Win95才发布。要知道Win95/Win98都是基于DOS的GUI层面的封装，单核CPU，多进程能力弱，可能Brendan Eich还不晓得存在多线程的概念。那时浏览器是单进程的，可能具备多线程的能力，但是硬件不支持，所以，它也只好是单线程的。虽然JavaScript是单线程的，但却有异步执行的能力，这不也弥补了单线程的不足，同时也简化了我们今天的开发，难道不是吗？</p>
-<p>所以说，一门语言的设计肯定和当时的时代背景，硬件设备，以及作者对这个世界的认知有关。</p>
-<h3 id="任务队列">任务队列</h3><p>任务队列是什么？<br>顾名思义，它是用来存放异步执行的回调的队列。会触发异步执行的操作包括<code>DOM事件</code>，<code>Ajax请求</code>，<code>定时器</code>。我们在一个网页中，点击事件，Ajax请求去服务器端获取数据来渲染页面，其实会产生很多异步任务的，那我们为什么看到的页面依旧是很流畅的？其实JavaScript执行引擎在主线程方法执行完，空闲的时候会不断地去检查任务队列，看是否有未执行的任务。如果有，则从队列中挨个取出，放到主线程的执行栈中执行。这一过程不断循环即为事件循环模型。</p>
-<h3 id="从setTimeout来讲事件循环模型">从setTimeout来讲事件循环模型</h3><p>相信用过JS的基本都用过setTimeout，它可以让某些操作延时执行。基本语法：<code>setTimeout(callback, millisecond)</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>;</span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> end = <span class="keyword">new</span> <span class="built_in">Date</span>;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'Time elapsed:'</span>, end - start, <span class="string">'ms'</span>);</span><br><span class="line">&#125;, <span class="number">500</span>);</span><br><span class="line"><span class="keyword">while</span> (<span class="keyword">new</span> <span class="built_in">Date</span> - start &lt; <span class="number">1000</span>) &#123;&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>上面的代码输出的结果是多少？<br>是不是觉得输出部分应该是延时500ms后再执行？是500ms吗？<br>答案是不确定，但是有一点是肯定的，那就是<code>至少</code>延时1000ms。</p>
-<p>因为主线程处有个1s的while()循环阻塞在那里，也就是必须等主线程的代码执行完毕，JavaScript引擎才会有空去任务队列查看有无要执行的任务。</p>
-<p>之前令我困惑的是，这些异步任务怎么会跑到任务队列中的？到底是谁操纵着这一切呢？</p>
-<p>在单线程的Javascript引擎中，setTimeout()是如何运行的呢，这里就要提到浏览器内核中的事件循环模型了。简单的讲，在Javascript执行引擎之外，有一个任务队列，当在代码中调用setTimeout()方法时，注册的延时方法会交由浏览器内核其他模块（以webkit为例，是webcore模块）处理，当延时方法到达触发条件，即到达设置的延时时间时，这一延时方法被添加至任务队列里。这一过程由浏览器内核其他模块处理，与执行引擎主线程独立，执行引擎在主线程方法执行完毕，到达空闲状态时，会从任务队列中顺序获取任务来执行，这一过程是一个不断循环的过程，称为事件循环模型。<br><img src="http://7xpg8c.com1.z0.glb.clouddn.com/bg2014100802.png" alt="Event Loop"></p>
-<p>  JavaScript执行引擎的主线程运行的时候，产生堆（heap）和栈（stack）。程序中代码依次进入栈中等待执行，当调用setTimeout()方法时，即图中右侧WebAPIs方法时，浏览器内核相应模块开始延时方法的处理，当延时方法到达触发条件时，方法被添加到用于回调的任务队列，只要执行引擎栈中的代码执行完毕，主线程就会去读取任务队列，依次执行那些满足触发条件的回调函数。</p>
-<p>  原来执行到WebAPI时，浏览器内核相应模块就开始忙碌起来，不同种类的API由相应模块处理，各司其职，有条不紊，最终都会把相应的异步回调送到任务队列中，等待主线程执行。</p>
-<h3 id="写在最后">写在最后</h3><p>有兴趣的其实可以去看看浏览器内核的实现，这样才能更好的理解JS的机制和原理，只是好久没碰过C++，看起来会很吃力吧！</p>
-<p>V8据说是最快的JS解释引擎，然后对此充满好奇的我还把V8源码下载下来了，准备好好啃啃，长长见识，看了一点，才发现C++的知识早已还给老师，基本语法概念都差不多忘了，打击太大，然后就放弃了，至今还静静地躺在我的硬盘上！</p>
-<p>求大神指教如何读源码！！</p>
-<p>参考文献：<br><a href="https://www.zhihu.com/question/35905242" target="_blank" rel="external">金戈铁马的知乎回答</a><br><a href="http://www.alloyteam.com/2015/10/turning-to-javascript-series-from-settimeout-said-the-event-loop-model/" target="_blank" rel="external">从setTimeout说事件循环模型</a><br><a href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html" target="_blank" rel="external">JavaScript 运行机制详解：再谈Event Loop</a></p>
+<h4 id="设置Git用户名和Email">设置Git用户名和Email</h4><blockquote>
+<p>git config –global user.name “John Smith”<br>git config –global user.email john@example.com</p>
+</blockquote>
+<h4 id="让Git记住你是如何解决某个文件的两个版本之间的conflict，这样在下次Git遇到同样的文件在相同的两个版本间发生冲突时，可以自动帮你使用相同的方法解决冲突">让Git记住你是如何解决某个文件的两个版本之间的conflict，这样在下次Git遇到同样的文件在相同的两个版本间发生冲突时，可以自动帮你使用相同的方法解决冲突</h4><blockquote>
+<p>git config –global rerere.enabled true</p>
+</blockquote>
+<h4 id="将Git默认的编辑器配置成vim">将Git默认的编辑器配置成vim</h4><blockquote>
+<p>git config –global core.editor vim</p>
+</blockquote>
+<h4 id="初始化git仓库">初始化git仓库</h4><blockquote>
+<p>git init</p>
+</blockquote>
+<h4 id="添加远程仓库">添加远程仓库</h4><blockquote>
+<p>git remote add origin git@github.com:michaelliao/learngit.git</p>
+</blockquote>
+<h4 id="克隆develop分支上的源码">克隆develop分支上的源码</h4><blockquote>
+<p>git clone (-b develop)git@github.com:michaelliao/gitskills.git</p>
+</blockquote>
+<h4 id="将改动提交到暂存区">将改动提交到暂存区</h4><blockquote>
+<p>git add welcome.txt</p>
+</blockquote>
+<h4 id="将改动提交到本地仓库并添加注释">将改动提交到本地仓库并添加注释</h4><blockquote>
+<p>git commit -m “initialized”</p>
+</blockquote>
+<h4 id="列出文件状态,_staged,_unstaged,_and_untracked-">列出文件状态, staged, unstaged, and untracked.</h4><blockquote>
+<p>git status</p>
+</blockquote>
+<h4 id="查看git_提交日志（最近３条）">查看git 提交日志（最近３条）</h4><blockquote>
+<p>git log -3</p>
+</blockquote>
+<h4 id="查看git_log_包含文件改动信息，添加或删除了多少行">查看git log 包含文件改动信息，添加或删除了多少行</h4><blockquote>
+<p>git log –stat</p>
+</blockquote>
+<h4 id="检出命令">检出命令</h4><blockquote>
+<p>git checkout<br>–文件　－－ 撤销工作区尚未提交的文件的修改或者删除<br>-b 分支　－－　创建并切换到该分支<br>分支　－－ 切换分支<br>commit ID　－－　将文件恢复到某次提交</p>
+</blockquote>
+<h4 id="查看修改后的文件与版本库文件的差别">查看修改后的文件与版本库文件的差别</h4><blockquote>
+<p>git diff</p>
+</blockquote>
+<h4 id="删除一些没有_git_add的文件">删除一些没有 git add的文件</h4><blockquote>
+<p>查看哪些文件和目录会被删除<br>git clean -nd</p>
+<p>真正删除多余的目录和文件<br>git clean -fd</p>
+</blockquote>
+<h4 id="保存当前的工作进度，会分别对暂存区和工作区的状态进行保存">保存当前的工作进度，会分别对暂存区和工作区的状态进行保存</h4><blockquote>
+<p>git stash </p>
+</blockquote>
+<h4 id="显示进度列表，可以多次保存工作进度，并且在恢复的时候进行选择">显示进度列表，可以多次保存工作进度，并且在恢复的时候进行选择</h4><blockquote>
+<p>git stash list</p>
+</blockquote>
+<h4 id="清除本地stash">清除本地stash</h4><blockquote>
+<p>git stash clear</p>
+</blockquote>
+<h4 id="应用某个stash">应用某个stash</h4><blockquote>
+<p>git stash apply stash@{0}</p>
+</blockquote>
+<h4 id="如果不使用任何参数，会恢复最近保存的工作进度">如果不使用任何参数，会恢复最近保存的工作进度</h4><p>如果提供<stash>参数（来自于git stash list显示的进度列表），则从该stash中恢复</stash></p>
+<blockquote>
+<p>git stash pop [–index] [<stash>]</stash></p>
+</blockquote>
+<h4 id="版本回退。HEAD表示当前的版本，即最新提交，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。">版本回退。HEAD表示当前的版本，即最新提交，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。</h4><blockquote>
+<p>git reset HEAD</p>
+</blockquote>
+<h4 id="版本回到某次提交">版本回到某次提交</h4><blockquote>
+<p>git reset –hard [commit id]</p>
+</blockquote>
+<h4 id="撤销暂存区中readme-txt_的修改">撤销暂存区中readme.txt 的修改</h4><blockquote>
+<p>git reset HEAD readme.txt</p>
+</blockquote>
+<h4 id="记录了使用Git时所使用过的命令，这样就可以回退到某个版本了">记录了使用Git时所使用过的命令，这样就可以回退到某个版本了</h4><blockquote>
+<p>git reflog</p>
+</blockquote>
+<h4 id="develop分支上的改动需提交到本地。切换到master分支，将develop分支上的改动merge到master分支上">develop分支上的改动需提交到本地。切换到master分支，将develop分支上的改动merge到master分支上</h4><blockquote>
+<p>git merge develop</p>
+</blockquote>
+<h4 id="合并命令">合并命令</h4><blockquote>
+<p>git merge –no-ff -m “merged bug fix 101” develop<br>将develop分支上的改动merge到master分支上。<br>合并分支时，加上–no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。</p>
+</blockquote>
+<h4 id="删除_dev_分支">删除 dev 分支</h4><blockquote>
+<p>git branch -d dev</p>
+</blockquote>
+<h4 id="如果要丢弃一个没有被合并过的分支，可以通过git_branch_-D_强行删除">如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除</name></h4><blockquote>
+<p>git branch -D <name></name></p>
+</blockquote>
+<h4 id="查看时间">查看时间</h4><blockquote>
+<p>ls –full-time .git/index</p>
+</blockquote>
+<h4 id="在本地创建分支并提交到远程">在本地创建分支并提交到远程</h4><blockquote>
+<p>git checkout -b new_branch_name<br>git push -u origin new_branch_name </p>
+</blockquote>
 
       
     </div>
@@ -264,36 +338,14 @@
   </div>
   
     
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2015/12/28/js-event-loop/">JavaScript事件循环模型</a></p>
-        <p><span>文章作者:</span><a href="/" title="访问 Felicity 的个人博客">Felicity</a></p>
-        <p><span>发布时间:</span>2015年12月28日 - 10时38分</p>
-        <p><span>最后更新:</span>2015年12月28日 - 10时44分</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/12/28/js-event-loop/" title="JavaScript事件循环模型">http://yoursite.com/2015/12/28/js-event-loop/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2015/12/28/js-event-loop/　　作者: Felicity" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script src="/js/clipboard.min.js"></script>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
 
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2015/12/28/git-commands/">
-                    Git常用命令
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2015/12/25/hello-world/">
-                    Hello Hexo
+                <a href="/2015/12/28/js-event-loop/">
+                    JavaScript事件循环模型
                 </a>
             </div>
         
@@ -304,7 +356,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么JavaScript被设计成单线程和异步运行"><span class="toc-number">1.</span> <span class="toc-text">为什么JavaScript被设计成单线程和异步运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#任务队列"><span class="toc-number">2.</span> <span class="toc-text">任务队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从setTimeout来讲事件循环模型"><span class="toc-number">3.</span> <span class="toc-text">从setTimeout来讲事件循环模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写在最后"><span class="toc-number">4.</span> <span class="toc-text">写在最后</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#设置Git用户名和Email"><span class="toc-number">1.</span> <span class="toc-text">设置Git用户名和Email</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#让Git记住你是如何解决某个文件的两个版本之间的conflict，这样在下次Git遇到同样的文件在相同的两个版本间发生冲突时，可以自动帮你使用相同的方法解决冲突"><span class="toc-number">2.</span> <span class="toc-text">让Git记住你是如何解决某个文件的两个版本之间的conflict，这样在下次Git遇到同样的文件在相同的两个版本间发生冲突时，可以自动帮你使用相同的方法解决冲突</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#将Git默认的编辑器配置成vim"><span class="toc-number">3.</span> <span class="toc-text">将Git默认的编辑器配置成vim</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化git仓库"><span class="toc-number">4.</span> <span class="toc-text">初始化git仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加远程仓库"><span class="toc-number">5.</span> <span class="toc-text">添加远程仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#克隆develop分支上的源码"><span class="toc-number">6.</span> <span class="toc-text">克隆develop分支上的源码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#将改动提交到暂存区"><span class="toc-number">7.</span> <span class="toc-text">将改动提交到暂存区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#将改动提交到本地仓库并添加注释"><span class="toc-number">8.</span> <span class="toc-text">将改动提交到本地仓库并添加注释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#列出文件状态,_staged,_unstaged,_and_untracked-"><span class="toc-number">9.</span> <span class="toc-text">列出文件状态, staged, unstaged, and untracked.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看git_提交日志（最近３条）"><span class="toc-number">10.</span> <span class="toc-text">查看git 提交日志（最近３条）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看git_log_包含文件改动信息，添加或删除了多少行"><span class="toc-number">11.</span> <span class="toc-text">查看git log 包含文件改动信息，添加或删除了多少行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#检出命令"><span class="toc-number">12.</span> <span class="toc-text">检出命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看修改后的文件与版本库文件的差别"><span class="toc-number">13.</span> <span class="toc-text">查看修改后的文件与版本库文件的差别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除一些没有_git_add的文件"><span class="toc-number">14.</span> <span class="toc-text">删除一些没有 git add的文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#保存当前的工作进度，会分别对暂存区和工作区的状态进行保存"><span class="toc-number">15.</span> <span class="toc-text">保存当前的工作进度，会分别对暂存区和工作区的状态进行保存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#显示进度列表，可以多次保存工作进度，并且在恢复的时候进行选择"><span class="toc-number">16.</span> <span class="toc-text">显示进度列表，可以多次保存工作进度，并且在恢复的时候进行选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#清除本地stash"><span class="toc-number">17.</span> <span class="toc-text">清除本地stash</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用某个stash"><span class="toc-number">18.</span> <span class="toc-text">应用某个stash</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如果不使用任何参数，会恢复最近保存的工作进度"><span class="toc-number">19.</span> <span class="toc-text">如果不使用任何参数，会恢复最近保存的工作进度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#版本回退。HEAD表示当前的版本，即最新提交，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。"><span class="toc-number">20.</span> <span class="toc-text">版本回退。HEAD表示当前的版本，即最新提交，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#版本回到某次提交"><span class="toc-number">21.</span> <span class="toc-text">版本回到某次提交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#撤销暂存区中readme-txt_的修改"><span class="toc-number">22.</span> <span class="toc-text">撤销暂存区中readme.txt 的修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#记录了使用Git时所使用过的命令，这样就可以回退到某个版本了"><span class="toc-number">23.</span> <span class="toc-text">记录了使用Git时所使用过的命令，这样就可以回退到某个版本了</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#develop分支上的改动需提交到本地。切换到master分支，将develop分支上的改动merge到master分支上"><span class="toc-number">24.</span> <span class="toc-text">develop分支上的改动需提交到本地。切换到master分支，将develop分支上的改动merge到master分支上</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#合并命令"><span class="toc-number">25.</span> <span class="toc-text">合并命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除_dev_分支"><span class="toc-number">26.</span> <span class="toc-text">删除 dev 分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如果要丢弃一个没有被合并过的分支，可以通过git_branch_-D_强行删除"><span class="toc-number">27.</span> <span class="toc-text">如果要丢弃一个没有被合并过的分支，可以通过git branch -D 强行删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看时间"><span class="toc-number">28.</span> <span class="toc-text">查看时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在本地创建分支并提交到远程"><span class="toc-number">29.</span> <span class="toc-text">在本地创建分支并提交到远程</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -400,15 +452,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2015/12/28/git-commands/" title="上一篇: Git常用命令">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2015/12/25/hello-world/" title="下一篇: Hello Hexo">
+            <a href="/2015/12/28/js-event-loop/" title="下一篇: JavaScript事件循环模型">
                 <i class="fa fa-angle-right"></i>
             </a>
         
